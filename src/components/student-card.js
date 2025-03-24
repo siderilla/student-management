@@ -52,21 +52,10 @@ class StudentCard extends HTMLElement{
         const mainDiv = document.createElement('div');
         mainDiv.classList.add('card');
         mainDiv.innerHTML = `
-            <div>
-                <strong>Name: </strong><span>${this.student.name}</span>
-            </div>
-			<div>
-                <strong>Surname: </strong><span>${this.student.surname}</span>
-            </div>
-            <div>
-                <strong>Age: </strong><span>${this.age}</span>
-            </div>
-			<div>
-                <strong>Gender: </strong><span>${this.student.gender}</span>
-            </div>
-			<div>
-                <strong>Nationality: </strong><span>${this.student.nationality}</span>
-            </div>
+				<div><strong>Name:</strong><span>${this.student.name} ${this.student.surname}</span></div>
+				<div><strong>Age:</strong><span>${this.age}</span></div>
+				<div><strong>Gender:</strong><span>${this.student.gender}</span></div>
+				<div><strong>Nationality:</strong><span>${this.student.nationality}</span></div>
         `
         this.shadow.appendChild(mainDiv);
     }

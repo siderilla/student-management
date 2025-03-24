@@ -12,6 +12,7 @@ class SuperGrid extends HTMLElement {
 		const students = await this.service.loadStudents();
 		this.render(students);
 	}
+	
 
 	render(students) {
 		this.shadowRoot.innerHTML = '';

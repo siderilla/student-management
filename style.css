@@ -1,13 +1,26 @@
 .card {
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(4, auto);
-	gap: 10px;
-	padding: 0 20px;
-	box-sizing: border-box;
-	position: relative;
+	max-width: 320px;
+	margin: 0 auto;  
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	display: grid;
+	gap: 8px;
+	padding: 16px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+  
+.card > div {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+}
+  
+.card strong {
+	justify-self: start;
+}
+  
+.card span {
+	justify-self: end;
 }
 
 .main-title {

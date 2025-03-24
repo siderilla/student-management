@@ -23,6 +23,7 @@ class SuperFooter extends HTMLElement{
         const style = document.createElement('style');
         style.innerText = `
             .footer-info{
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
                 background-color: ${this.backgroundColor};
                 color: black;
             }
