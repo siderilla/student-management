@@ -13,14 +13,18 @@ class SuperHeader extends HTMLElement{
     style(){
         const style = document.createElement('style');
         let bColor = this.getAttribute('b-color');
-        if(!bColor){
-        console.log('accidenti!!')
-            bColor = 'crimson';
-        }
+
         style.innerText = `
             .main-title{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 10%;
+				color: #ffffff;
+				z-index: 1; /* posiziona l'elemento corrente sopra agli altri! */
+				position: relative;
+			    font-family: Verdana, Geneva, Tahoma, sans-serif;
                 background-color: ${bColor};
-                color: gold;
             }
         `
         this.shadow.appendChild(style);

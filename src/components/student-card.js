@@ -26,12 +26,16 @@ class StudentCard extends HTMLElement{
         const style = document.createElement('style');
         style.innerText = `
             .card{
-                border-radius: 8px;
-                border: solid 1px #313131;
-                padding: 0px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+				width: 100%;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(4, auto);
+				gap: 10px;
+				padding: 0 20px;
+				box-sizing: border-box;
+				z-index: 1;
+				position: relative;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
         `
         this.shadow.appendChild(style);
