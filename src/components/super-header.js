@@ -10,24 +10,21 @@ class SuperHeader extends HTMLElement{
         this.render();
     }
 
-    style(){
-        const style = document.createElement('style');
-        let bColor = this.getAttribute('b-color');
+    style() {
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = '../../style.css';  // percorso relativo al tuo index.html
+		this.shadowRoot.appendChild(link);
+		
+        // const style = document.createElement('style');
+        // let bColor = this.getAttribute('b-color');
 
-        style.innerText = `
-            .main-title{
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				height: 10%;
-				color: #ffffff;
-				z-index: 1; /* posiziona l'elemento corrente sopra agli altri! */
-				position: relative;
-			    font-family: Verdana, Geneva, Tahoma, sans-serif;
-                background-color: ${bColor};
-            }
-        `
-        this.shadow.appendChild(style);
+        // style.innerText = `
+        //     .main-title{
+		// 		...
+        //     }
+        // `
+        // this.shadow.appendChild(style);
     }
 
     render(){

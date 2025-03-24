@@ -17,28 +17,35 @@ class StudentCard extends HTMLElement{
         return {name: 'giovanni', yob: 1981}
     }
 
+	get age() {
+        const now = new Date();
+        const actualYear = now.getFullYear();
+        const age = actualYear - this.student.yob;
+        return age;
+    }
+
     connectedCallback(){
         this.style();
         this.render()
     }
 
     style(){
-        const style = document.createElement('style');
-        style.innerText = `
-            .card{
-				width: 100%;
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				grid-template-rows: repeat(4, auto);
-				gap: 10px;
-				padding: 0 20px;
-				box-sizing: border-box;
-				z-index: 1;
-				position: relative;
-				font-family: Verdana, Geneva, Tahoma, sans-serif;
-            }
-        `
-        this.shadow.appendChild(style);
+
+	// alternativa migliore: chiami il css
+
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = '../../style.css';  // percorso relativo al tuo index.html
+		this.shadowRoot.appendChild(link);
+
+
+        // const style = document.createElement('style');
+        // style.innerText = `
+        //     .card{
+		//		 ...
+        //     }
+        // `
+        // this.shadow.appendChild(style);
     }
 
     render(){
@@ -46,10 +53,19 @@ class StudentCard extends HTMLElement{
         mainDiv.classList.add('card');
         mainDiv.innerHTML = `
             <div>
-                <strong>Nome: </strong><span>${this.student.name}</span>
+                <strong>Name: </strong><span>${this.student.name}</span>
+            </div>
+			<div>
+                <strong>Surname: </strong><span>${this.student.surname}</span>
             </div>
             <div>
-                <strong>Età: </strong><span>${this.student.yob}</span>
+                <strong>Age: </strong><span>${this.age}</span>
+            </div>
+			<div>
+                <strong>Gender: </strong><span>${this.student.gender}</span>
+            </div>
+			<div>
+                <strong>Nationality: </strong><span>${this.student.nationality}</span>
             </div>
         `
         this.shadow.appendChild(mainDiv);
