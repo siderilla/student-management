@@ -1,0 +1,10 @@
+aggiungere edit, add come web component
+ancora un webcomponent che si chiama student grid
+
+<super-grid></super-grid>
+	supergrid chiamerà il suo student service, 
+	si farà dare gli studenti e nel suo render prenderà se stesso 
+	e infilerà le student card
+
+creare un compoennte dialog per inserire un nuovo student-service
+per editare domani

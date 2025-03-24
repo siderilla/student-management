@@ -1,17 +1,3 @@
-// export default class StudentService {
-// 	async constructor() {
-// 		this.students = localStorage.getItem("students");
-// 		if (!this.students) {
-// 			this.students = await this.getStudentsFromJson();
-// 			this.saveStudents(this.students);
-// 		}
-// 	}
-
-// 	getStudentsFromJson() {
-
-// 	}
-// }
-
 export default class StudentService {
 
     constructor() {}
