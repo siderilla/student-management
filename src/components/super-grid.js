@@ -1,4 +1,4 @@
-import StudentService from "./student-service.js";
+import StudentService from "../services/student-service.js"
 
 class SuperGrid extends HTMLElement {
 

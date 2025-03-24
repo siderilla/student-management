@@ -7,7 +7,8 @@ import '../components/student-edit.js';
 import StudentService from './student-service.js';
 
 const service = new StudentService();
-service.loadStudents().then(() => render(service.students))
+
+// service.loadStudents().then(() => render(service.students))
 
 // function render(students) {
 //     const main = document.getElementById('main-div')
