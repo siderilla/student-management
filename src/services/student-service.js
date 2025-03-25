@@ -5,13 +5,23 @@ export default class StudentService {
 	}
 
 	async loadStudents() {
-		this.students = JSON.parse(localStorage.getItem('students') || await this.getStudentsFromJson());
+		let storedStudents = localStorage.getItem('students');
+		if (storedStudents) {
+			try {
+				this.students = JSON.parse(storedStudents);
+			} catch (error) {
+				console.error(_, error);
+				return this.getStudentsFromJson()
+				.then
+			}
+		}
+		this.students = JSON.parse(localStorage || await this.getStudentsFromJson());
 		localStorage.setItem('students', JSON.stringify(this.students));
-		return this.students
+		return this.students;
 	}
 
-	getStudentsFromJson() {
-        const resp = fetch('/assets/students.json');
+	async getStudentsFromJson() {
+        const resp = await fetch('./assets/students.json');
 		return resp.json();
     }
 

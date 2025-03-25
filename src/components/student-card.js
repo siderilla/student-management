@@ -35,7 +35,7 @@ class StudentCard extends HTMLElement{
 
 		const link = document.createElement('link');
 		link.rel = 'stylesheet';
-		link.href = '../../style.css';  // percorso relativo al tuo index.html
+		link.href = '../../style.css';
 		this.shadowRoot.appendChild(link);
 
 
@@ -57,6 +57,12 @@ class StudentCard extends HTMLElement{
 				<div><strong>Gender:</strong><span>${this.student.gender}</span></div>
 				<div><strong>Nationality:</strong><span>${this.student.nationality}</span></div>
         `
+        // EDIT BUTTON //
+        // const editButton = document.createElement('button');
+        // editButton.appendChild(document.createTextNode('edit'));
+        // editButton.addEventListener('click', () => console.log('edit'));
+        // mainDiv.appendChild(editButton);
+
         this.shadow.appendChild(mainDiv);
     }
 

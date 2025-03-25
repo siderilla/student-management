@@ -13,7 +13,7 @@ class SuperHeader extends HTMLElement{
     style() {
 		const link = document.createElement('link');
 		link.rel = 'stylesheet';
-		link.href = '../../style.css';  // percorso relativo al tuo index.html
+		link.href = '../../style.css';
 		this.shadowRoot.appendChild(link);
 		
         // const style = document.createElement('style');
